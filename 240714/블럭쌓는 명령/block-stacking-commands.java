@@ -23,14 +23,19 @@ public class Main {
             int Ai = Integer.parseInt(st.nextToken());
             int Bi = Integer.parseInt(st.nextToken());
 
-            for(int j = Ai;j<=Bi;j++){
-                arr[j-1]++;
+            arr[Ai-1]++;
+            if(Bi<n){
+                arr[Bi]--;
             }
-
-
         }
-        Arrays.sort(arr);
-        int median = arr[n / 2];
+
+        int[] result = new int[n];
+        result[0] = arr[0];
+        for(int i = 1;i<n;i++){
+            result[i] = result[i-1]+arr[i];
+        }
+        Arrays.sort(result);
+        int median = result[n / 2];
         System.out.println(median);
     }
 }
