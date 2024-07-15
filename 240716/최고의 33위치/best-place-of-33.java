@@ -35,7 +35,7 @@ public class Main {
         int coin = 0;
         for(int i = row;i<row+3;i++){
             for(int j = col;j<col+3;j++){
-                if(arr[i][j]==1) result++;
+                if(arr[i][j]==1) coin++;
             }
         }
         result = Math.max(result, coin);
